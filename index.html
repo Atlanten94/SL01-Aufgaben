@@ -3,32 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pflegeformular</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="form-container">
-        <h1>Pflegeformular</h1>
-        <form id="pflegeformular">
-            <h2>To Do's:</h2>
-            <label>
-                <input type="checkbox" name="haes_messungen" id="haes_messungen"> HAES Messungen/Reduktionen
-            </label><br>
-            <label>
-                <input type="checkbox" name="nachtmedikation" id="nachtmedikation"> Vergabe der Nachtmedikation
-            </label><br>
-            <label>
-                <input type="checkbox" name="pat_reduktion" id="pat_reduktion"> Pat. um 00:00 Uhr in die Reduktion
-            </label><br>
-            <!-- Weitere Kontrollkästchen hinzufügen -->
-            <button type="button" onclick="resetCheckboxes()">Zurücksetzen</button>
+        <form action="">
+            <h1>Nachtdienst Aufgaben</h1>
+            <p>Dienstbeginn: 21:00 Uhr</p>
+            <br>
+            <p>Dienstübergabe: 21:00 - 21:15 Uhr</p>
+            <br>
+            <p>Im Anschluss Anwesenheitskontrolle der Patienten!</p>
+            <br>
+            <p>Vorstellung bei evtl. Neuaufnahmen und Verteilen der Urinbecher (US) an betroffene Pat. für den nächsten Morgen!</p>
         </form>
     </div>
-
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-
+    <br>
+    <div class="form-container">
+        <form action="">
+            <h2>To Do's</h2>
+            <br>
+            <p>Bitte haken Sie die erledigten Aufgaben ab.</p>
+        </form>
+    </div>
+    <br>
+    <div class="form-container">
+        <form id="pflegeformular">
+            <h2>Bis 00:00 Uhr</h2>
+            <br>
+            <label>
+                <input type="checkbox" name="haes_messungen"> HAES Messungen/Reduktionen
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="nachtmedikation"> Vergabe der Nachtmedikation
+            </label>
+            <br>
+        </form>
+    </div>
+    <br>
+    <div class="form-container">
+        <form id="pflegeformular">
+            <h2>Pat. um 00:00 Uhr in die Reduktion</h2>
+            <br>
+            <label>
+                <input type="checkbox" name="pat_reduktion"> Tagesdosis in den HAES-Bogen eintragen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="maßnahme_absetzen"> Maßnahme HAES Dosisfindung absetzen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="maßnahme_planen"> Maßnahme Reduktion mit Terminen planen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="verlaufsbericht"> HAES-Reduktion mit Tagesmenge in dem Verlaufsbericht dokumentieren
+            </label>
+            <br>
+        </form>
+    </div>
+        <br>
+    <div class="form-container">
+        <form id="pflegeformular">
+            <h2>Sichtungsgänge</h2>
+            <label>
+                <input type="checkbox" name="sichtung_1"> Erster bis 00:00 Uhr plus Dokumentation im KIS!
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="sichtung_2"> Zweiter bis 03:00 Uhr plus Dokumentation im KIS!
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="wecken" id=""> Wekcen: 06:30 Uhr plus Dokumentation im KIS!
+            </label>
+        </form>
+    </div>
+    <br>
+    <div class="form-container">
+        <form id="pflegeformular">
+            <h2>Organisatorisches</h2>
+            <br>
+            <label for="">
+                <input type="checkbox" name="plantafel"> Umstecken der Plantafel für den folgenden Tag
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="labor"> Labor für den kommenden Tag im Behandlungsraum richten
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="urinröhrchen" id=""> Urinröhrchen auf das Tablett im Fäkalienraum
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="dsDienstzimmer" id=""> Urinbecher (DS) mit ins Dienstzimmer nehmen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="laborliste" id=""> Laborliste anfertigen und am nächsten Morgen aushängen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="ausgangszettel" id=""> Aktuellen Ausgangszettel kontrollieren, wegwerfen und neuen auslegen
+            </label>
+            <br>
+            <label for="">
+                <input type="checkbox" name="nachwachenliste" id=""> Nachtwachenliste anpassen
+            </label>
+            <br>
+        </form>
+    </div>
+    <br>
+            <!-- Fügen Sie hier weitere Kontrollkästchen hinzu -->
+   
+    <div class="form-container">
+            <button type="button" onclick="saveProgress()">Speichern</button>
+            <button type="button" onclick="resetCheckboxes()">Zurücksetzen</button>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
