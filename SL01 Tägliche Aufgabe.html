@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pflegeformular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Pflegeformular</h1>
+        <form id="pflegeformular">
+            <h2>To Do's:</h2>
+            <label>
+                <input type="checkbox" name="haes_messungen"> HAES Messungen/Reduktionen
+            </label><br>
+            <label>
+                <input type="checkbox" name="nachtmedikation"> Vergabe der Nachtmedikation
+            </label><br>
+            <label>
+                <input type="checkbox" name="pat_reduktion"> Pat. um 00:00 Uhr in die Reduktion
+            </label><br>
+            <!-- Fügen Sie hier weitere Kontrollkästchen hinzu -->
+
+            <h2>Sichtungsgänge:</h2>
+            <label>
+                <input type="checkbox" name="sichtung_1"> Nummer 1: bis 00:00 Uhr plus Dokumentation im KIS!
+            </label><br>
+            <label>
+                <input type="checkbox" name="sichtung_2"> Nummer 2: bis 03:00 Uhr plus Dokumentation im KIS!
+            </label><br>
+
+            <button type="button" onclick="saveProgress()">Speichern</button>
+            <button type="button" onclick="resetCheckboxes()">Zurücksetzen</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
