@@ -12,28 +12,23 @@
         <form id="pflegeformular">
             <h2>To Do's:</h2>
             <label>
-                <input type="checkbox" name="haes_messungen"> HAES Messungen/Reduktionen
+                <input type="checkbox" name="haes_messungen" id="haes_messungen"> HAES Messungen/Reduktionen
             </label><br>
             <label>
-                <input type="checkbox" name="nachtmedikation"> Vergabe der Nachtmedikation
+                <input type="checkbox" name="nachtmedikation" id="nachtmedikation"> Vergabe der Nachtmedikation
             </label><br>
             <label>
-                <input type="checkbox" name="pat_reduktion"> Pat. um 00:00 Uhr in die Reduktion
+                <input type="checkbox" name="pat_reduktion" id="pat_reduktion"> Pat. um 00:00 Uhr in die Reduktion
             </label><br>
-            <!-- Fügen Sie hier weitere Kontrollkästchen hinzu -->
-
-            <h2>Sichtungsgänge:</h2>
-            <label>
-                <input type="checkbox" name="sichtung_1"> Nummer 1: bis 00:00 Uhr plus Dokumentation im KIS!
-            </label><br>
-            <label>
-                <input type="checkbox" name="sichtung_2"> Nummer 2: bis 03:00 Uhr plus Dokumentation im KIS!
-            </label><br>
-
-            <button type="button" onclick="saveProgress()">Speichern</button>
+            <!-- Weitere Kontrollkästchen hinzufügen -->
             <button type="button" onclick="resetCheckboxes()">Zurücksetzen</button>
         </form>
     </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
