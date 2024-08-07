@@ -7,119 +7,327 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <form action="">
+    <div class="form-container" id="headline">
+        <div class="top-strip"></div>
+        <form id="pflegeformular">
+            
             <h1>Nachtdienst Aufgaben</h1>
-            <p>Dienstbeginn: 21:00 Uhr</p>
-            <br>
-            <p>Dienstübergabe: 21:00 - 21:15 Uhr</p>
-            <br>
-            <p>Im Anschluss Anwesenheitskontrolle der Patienten!</p>
-            <br>
-            <p>Vorstellung bei evtl. Neuaufnahmen und Verteilen der Urinbecher (US) an betroffene Pat. für den nächsten Morgen!</p>
+            <h4>Dienstbeginn: 21:00 Uhr</h4>
+            
+            <h4>Dienstübergabe: 21:00 - 21:15 Uhr</h4>
+            
+            <h4>Im Anschluss Anwesenheitskontrolle der Patienten!</h4>
+            
+            <h4>Vorstellung bei evtl. Neuaufnahmen und Verteilen der Urinbecher (US) an betroffene Pat. für den nächsten Morgen!</h4>
         </form>
     </div>
     <br>
     <div class="form-container">
-        <form action="">
+        <form id="pflegeformular" class="todo">
             <h2>To Do's</h2>
-            <br>
             <p>Bitte haken Sie die erledigten Aufgaben ab.</p>
         </form>
     </div>
     <br>
     <div class="form-container">
         <form id="pflegeformular">
-            <h2>Bis 00:00 Uhr</h2>
-            <br>
-            <label>
-                <input type="checkbox" name="haes_messungen"> HAES Messungen/Reduktionen
-            </label>
-            <br>
-            <label>
-                <input type="checkbox" name="nachtmedikation"> Vergabe der Nachtmedikation
-            </label>
-            <br>
+            <h3>Bis 00:00 Uhr</h3>
+        <div class="checkboxes">
+            <div class="checkboxen">
+                <input type="checkbox" name="haes_messungen">
+                <label>
+                    HAES Messungen/Reduktionen
+                </label>
+            </div>
+            <div class="checkboxen">
+                <input type="checkbox" name="nachtmedikation"> 
+                <label>
+                    Vergabe der Nachtmedikation
+                </label>
+            </div>
+    
+        </div>
+        <br>
         </form>
     </div>
     <br>
     <div class="form-container">
         <form id="pflegeformular">
-            <h2>Pat. um 00:00 Uhr in die Reduktion</h2>
-            <br>
-            <label>
-                <input type="checkbox" name="pat_reduktion"> Tagesdosis in den HAES-Bogen eintragen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="maßnahme_absetzen"> Maßnahme HAES Dosisfindung absetzen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="maßnahme_planen"> Maßnahme Reduktion mit Terminen planen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="verlaufsbericht"> HAES-Reduktion mit Tagesmenge in dem Verlaufsbericht dokumentieren
-            </label>
-            <br>
+            <h3>Pat. um 00:00 Uhr in die Reduktion</h3>
+            
+        <div class="checkboxes">
+                <div class="checkboxen">
+                    <input type="checkbox" name="pat_reduktion">
+                    <label>
+                    Tagesdosis in den HAES-Bogen eintragen
+                    </label>
+                </div>
+                <div class="checkboxen">
+                    <input type="checkbox" name="maßnahme_absetzen"> 
+                    <label for="">
+                        Maßnahme HAES Dosisfindung absetzen 
+                    </label>
+                </div>
+                <div class="checkboxen">
+                    <input type="checkbox" name="maßnahme_planen"> 
+                    <label for="">
+                        Maßnahme Reduktion mit Terminen planen
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="verlaufsbericht">
+                <label>HAES-Reduktion mit Tagesmenge in dem Verlaufsbericht dokumentieren</label>
+            </div>
+
+        </div>
+        <br>
         </form>
     </div>
         <br>
     <div class="form-container">
-        <form id="pflegeformular">
-            <h2>Sichtungsgänge</h2>
-            <label>
-                <input type="checkbox" name="sichtung_1"> Erster bis 00:00 Uhr plus Dokumentation im KIS!
-            </label>
-            <br>
-            <label>
-                <input type="checkbox" name="sichtung_2"> Zweiter bis 03:00 Uhr plus Dokumentation im KIS!
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="wecken" id=""> Wekcen: 06:30 Uhr plus Dokumentation im KIS!
-            </label>
+        <form>
+            <h3>Sichtungsgänge</h3>
+            <div class="checkboxes">
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="sichtung_1">
+                    <label>
+                        Erster bis 00:00 Uhr plus Dokumentation im KIS!
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="sichtung_2"> 
+                <label>
+                    Zweiter bis 03:00 Uhr plus Dokumentation im KIS!
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="wecken" id="">
+                <label for="">
+                    Wecken: 06:30 Uhr plus Dokumentation im KIS!
+                </label>
+            </div>
+            
+        </div>
+        <br>
         </form>
     </div>
     <br>
     <div class="form-container">
-        <form id="pflegeformular">
-            <h2>Organisatorisches</h2>
-            <br>
-            <label for="">
-                <input type="checkbox" name="plantafel"> Umstecken der Plantafel für den folgenden Tag
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="labor"> Labor für den kommenden Tag im Behandlungsraum richten
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="urinröhrchen" id=""> Urinröhrchen auf das Tablett im Fäkalienraum
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="dsDienstzimmer" id=""> Urinbecher (DS) mit ins Dienstzimmer nehmen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="laborliste" id=""> Laborliste anfertigen und am nächsten Morgen aushängen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="ausgangszettel" id=""> Aktuellen Ausgangszettel kontrollieren, wegwerfen und neuen auslegen
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="nachwachenliste" id=""> Nachtwachenliste anpassen
-            </label>
-            <br>
+        <form>
+            <h3>Organisatorisches</h3>
+
+            <div class="checkboxes">
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="plantafel">
+                    <label for="">
+                        Umstecken der Plantafel für den folgenden Tag
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="labor">
+                <label for="">
+                    Labor für den kommenden Tag im Behandlungsraum richten
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="urinröhrchen" id="">
+                <label for="">
+                    Urinröhrchen auf das Tablett im Fäkalienraum
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="dsDienstzimmer" id="">
+                <label for="">
+                    Urinbecher (DS) mit ins Dienstzimmer nehmen
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="laborliste" id="">
+                <label for="">
+                    Laborliste anfertigen und am nächsten Morgen aushängen
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="ausgangszettel" id=""> 
+                <label for="">
+                    Aktuellen Ausgangszettel kontrollieren, wegwerfen und neuen auslegen
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="nachwachenliste" id="">
+                <label for="">
+                    Nachtwachenliste anpassen
+                </label>
+            </div>
+            
+            <div class="checkboxen">
+                <input type="checkbox" name="temperaturlisten" id="">
+                <label for="">
+                    Überprüfen der Temperaturlisten im Behandlungszimmer und in der Küche
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="medikamentenpöttchen" id="">
+                <label for="">
+                    Medikamentenpöttchen im Wagen auffüllen
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="wasserflaschen" id="">
+                <label for="">
+                    Überprüfen, ob genug Wasserflaschen im Dienstzimmer sind
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="therapieplantafel" id="">
+                <label for="">
+                    Therapieplantafel der Patienten freimachen
+                </label>
+            </div>
+
+        </div>
+        <br>
         </form>
     </div>
     <br>
+    <div class="form-container">
+        <form>
+            <h3>Hygiene</h3>
+
+            <div class="checkboxes">
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="sozialraum">
+                    <label for="">
+                        Sozialraum "aufräumen"
+                    </label>
+                </div>
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="sozialraum">
+                    <label for="">
+                        Flächendesinfektion im Dienst-, Behandlung- und Aufnahmehimmer (inklusive Tastaturen und Telefone)
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="wäschesäcke" id="">
+                <label for="">
+                    Ggf. Wäschesäcke wechseln
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="kaffeekannenpersonal" id="">
+                <label for="">
+                    Kaffeekannen Personal spülen
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="wasserkännchen" id="">
+                <label for="">
+                    Wasserkännchen aus dem Aufnahme- und Dienstzimmer spülen
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="teewagen" id="">
+                <label for="">
+                    Teekannen spülen, Teewagen reinigen und neu bestücken
+                </label>
+            </div>
+
+        </div>
+        <br>
+        </form>
+    </div>
+    <br>
+    <div class="form-container">
+        <form>
+            <h3>Küche</h3>
+
+            <div class="checkboxes">
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="frühstücksplatten">
+                    <label for="">
+                        Richten der Frühstücksplatten für den Morgen
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="frühstückswagen">
+                <label for="">
+                    Frühstückswagen richten
+                </label>
+            </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="KaffeePat" id="">
+                <label for="">
+                    Kaffee für Patient:innen kochen
+                </label>
+            </div>
+            
+
+            <div class="checkboxen">
+                <input type="checkbox" name="Brot" id="">
+                <label for="">
+                    Brot und Brötchen reinholen
+                </label>
+            </div>
+
+        </div>
+        <br>
+        </form>
+    </div>
+    <br>
+    <div class="form-container">
+        <form>
+            <h3>Ab 06:30 Uhr</h3>
+
+            <div class="checkboxes">
+
+                <div class="checkboxen">
+                    <input type="checkbox" name="patwecken">
+                    <label for="">
+                        Patient:innen wecken (mit Ankündigung DS) und anschließend den Frühstückswagen rausschieben
+                    </label>
+                </div>
+
+            <div class="checkboxen">
+                <input type="checkbox" name="frühstückswagen">
+                <label for="">
+                    Dokumentation im KIS
+                </label>
+            </div>
+        </div>
+        <br>
+        </form>
+    </div>
             <!-- Fügen Sie hier weitere Kontrollkästchen hinzu -->
-   
+    <br>
     <div class="form-container">
             <button type="button" onclick="saveProgress()">Speichern</button>
             <button type="button" onclick="resetCheckboxes()">Zurücksetzen</button>
