@@ -73,31 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Zeit in Stunden und Minuten, zu der die Kontrollkästchen zurückgesetzt werden sollen
-const resetHour = 5; // 18 Uhr
-const resetMinute = 00; // 00 Minuten
 
-// Funktion zum Zurücksetzen der Kontrollkästchen
-function resetCheckboxes() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    checkbox.checked = false;
-  });
-  remove(ref(database, 'pflegeformular'))
-    .then(() => {
-      console.log('Kontrollkästchen erfolgreich zurückgesetzt!');
-    })
-    .catch((error) => {
-      console.error('Fehler beim Zurücksetzen der Kontrollkästchen:', error);
-    });
-}
-
-// Überprüft jede Minute, ob es Zeit ist, die Kontrollkästchen zurückzusetzen
-setInterval(() => {
-  const now = new Date();
-  if (now.getHours() === resetHour && now.getMinutes() === resetMinute) {
-    resetCheckboxes();
-  }
-}, 60000); // alle 60 Sekunden (1 Minute)
 
 
