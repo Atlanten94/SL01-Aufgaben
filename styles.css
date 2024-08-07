@@ -1,19 +1,41 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #bffff9;
 }
 
 .form-container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 5% 20px 5%;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
 }
 
-h1, h2 {
+.todo{
     text-align: center;
+}
+#headline {
+border-top: 20px solid #40E0D0;
+}
+
+.checkboxes{
+    text-align: left;
+}
+
+.checkboxen{
+    display: flex;
+    align-items: center;
+}
+
+.checkboxen input[type="checkbox"] {
+    margin-right: 20px; /* Abstand zwischen Checkbox und Label */
+}
+
+h1, h2, h4 {
+    text-align: center;
+    margin: 15px 0;
 }
 
 label {
