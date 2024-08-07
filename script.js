@@ -1,75 +1,75 @@
 // Your web app's Firebase configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getDatabase, ref, set, get, remove } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDcWNv5A0JUnaprb3dMoCGwKpQEaxiku9c",
-    authDomain: "sl01-aufgaben.firebaseapp.com",
-    projectId: "sl01-aufgaben",
-    storageBucket: "sl01-aufgaben.appspot.com",
-    messagingSenderId: "407438028848",
-    appId: "1:407438028848:web:d633a796db7d8bcbf1fdf5",
-    measurementId: "G-F4HJBTKS19"
+  apiKey: "AIzaSyB3a7mBkYun-pW-reZ90qDzWKxM-Nntbc0",
+    authDomain: "dienstaufgaben-42703.firebaseapp.com",
+    databaseURL: "https://dienstaufgaben-42703-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "dienstaufgaben-42703",
+    storageBucket: "dienstaufgaben-42703.appspot.com",
+    messagingSenderId: "308022795905",
+    appId: "1:308022795905:web:8d395d93530aaf368ef780",
+    measurementId: "G-WDLP80WGEB"
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
-// Save progress to Firebase
 function saveProgress() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const progress = {};
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const progress = {};
 
-    checkboxes.forEach(checkbox => {
-        progress[checkbox.name] = checkbox.checked;
-    });
+  checkboxes.forEach(checkbox => {
+    progress[checkbox.name] = checkbox.checked;
+  });
 
-    database.ref('pflegeformular').set(progress, (error) => {
-        if (error) {
-            alert('Fehler beim Speichern des Fortschritts.');
-        } else {
-            console.log('Fortschritt erfolgreich gespeichert.');
-        }
+  set(ref(database, 'pflegeformular'), progress)
+    .then(() => {
+      console.log('Fortschritt erfolgreich gespeichert.');
+    })
+    .catch((error) => {
+      console.error('Fehler beim Speichern des Fortschritts:', error);
     });
 }
 
-// Load progress from Firebase
 function loadProgress() {
-    database.ref('pflegeformular').once('value').then((snapshot) => {
-        const progress = snapshot.val();
+  const progressRef = ref(database, 'pflegeformular');
+  get(progressRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      const progress = snapshot.val();
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-        if (progress) {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = progress[checkbox.name] || false;
-            });
-        }
-    }).catch((error) => {
-        console.error('Fehler beim Laden des Fortschritts:', error);
-    });
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = progress[checkbox.name] || false;
+      });
+    }
+  }).catch((error) => {
+    console.error('Fehler beim Laden des Fortschritts:', error);
+  });
 }
 
-// Reset checkboxes and clear progress from Firebase
 function resetCheckboxes() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = false;
-    });
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
 
-    database.ref('pflegeformular').remove((error) => {
-        if (error) {
-            alert('Fehler beim Zurücksetzen der Kontrollkästchen.');
-        } else {
-            alert('Kontrollkästchen erfolgreich zurückgesetzt!');
-        }
+  remove(ref(database, 'pflegeformular'))
+    .then(() => {
+      alert('Kontrollkästchen erfolgreich zurückgesetzt!');
+    })
+    .catch((error) => {
+      alert('Fehler beim Zurücksetzen der Kontrollkästchen.');
+      console.error(error);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadProgress();
+  loadProgress();
 
-    // Add change event listeners to all checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', saveProgress);
-    });
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', saveProgress);
+  });
 });
 
