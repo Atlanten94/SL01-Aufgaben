@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/fireba
 import { getDatabase, ref, set, get, remove } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB3a7mBkYun-pW-reZ90qDzWKxM-Nntbc0",
+ apiKey: "AIzaSyB3a7mBkYun-pW-reZ90qDzWKxM-Nntbc0",
     authDomain: "dienstaufgaben-42703.firebaseapp.com",
     databaseURL: "https://dienstaufgaben-42703-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "dienstaufgaben-42703",
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkbox.addEventListener('change', saveProgress);
   });
 });
+
 
 
 
