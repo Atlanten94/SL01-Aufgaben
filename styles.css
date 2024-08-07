@@ -31,6 +31,11 @@ border-top: 20px solid #40E0D0;
 
 .checkboxen input[type="checkbox"] {
     margin-right: 20px; /* Abstand zwischen Checkbox und Label */
+    width: 15px;
+    height: 15px;
+    min-width: 15px; /* Verhindert, dass das Kontrollkästchen schrumpft */
+    min-height: 15px; /* Verhindert, dass das Kontrollkästchen schrumpft */
+    margin-right: 10px; 
 }
 
 h1, h2, h4 {
