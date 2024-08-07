@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Zeit in Stunden und Minuten, zu der die Kontrollkästchen zurückgesetzt werden sollen
-const resetHour = 4; // 18 Uhr
-const resetMinute = 55; // 00 Minuten
+const resetHour = 5; // 18 Uhr
+const resetMinute = 00; // 00 Minuten
 
 // Funktion zum Zurücksetzen der Kontrollkästchen
 function resetCheckboxes() {
